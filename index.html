@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="indexstyle.css">
 </head>
 <body>
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle">Dark Mode</label>
+    </div>
     <div class="container">
         <h1>Matrix Transpose Tool</h1>
         <div class="btn-container">
@@ -14,5 +18,24 @@
             <button onclick="location.href='nXm.html'">Rectangular Matrix (n x m)</button>
         </div>
     </div>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+    
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', null);
+            }
+        });
+    </script>
 </body>
 </html>
