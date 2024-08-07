@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrix Transpose</title>
     <link rel="stylesheet" href="funcstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="dark-mode-toggle">
-        <input type="checkbox" id="darkModeToggle">
-        <label for="darkModeToggle">Dark Mode</label>
-    </div>
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
     <div class="container">
         <h2>Matrix Transpose</h2>
         <label for="matrixSize">Matrix Size (n x n): </label>
@@ -27,11 +27,6 @@
     <script src="generateMat.js"></script>
     <script src="transposeMat.js"></script>
     <script>
-        
-
-        
-
-        // Generate an initial matrix when the page loads
         window.onload = generateMatrix;
     </script>
 </body>

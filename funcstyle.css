@@ -50,6 +50,11 @@ input[type="number"] {
     margin: 5px 0;
     
 }
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 body.dark-mode {
     background-color: #1a1a1a;
     color: #bbbaba;
