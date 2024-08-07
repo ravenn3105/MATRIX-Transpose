@@ -1,5 +1,4 @@
 function invertMatrix() {
-    alert('Invert Matri');
     const isSquareMatrix = window.location.href.includes('square.html');
     let numRows, numCols;
     
@@ -57,4 +56,45 @@ function invertMatrix() {
     resultHTML += '</table>';
 
     document.getElementById('inverseResult').innerHTML = resultHTML;
+}
+function determinant(matrix) {
+    const n = matrix.length;
+    if (n === 1) return matrix[0][0];
+    if (n === 2) return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+
+    let det = 0;
+    for (let j = 0; j < n; j++) {
+        det += matrix[0][j] * cofactor(matrix, 0, j);
+    }
+    return det;
+}
+function cofactor(matrix, row, col) {
+    const subMatrix = [];
+    const n = matrix.length;
+
+    for (let i = 0; i < n; i++) {
+        if (i === row) continue;
+        const subRow = [];
+        for (let j = 0; j < n; j++) {
+            if (j === col) continue;
+            subRow.push(matrix[i][j]);
+        }
+        subMatrix.push(subRow);
+    }
+
+    return Math.pow(-1, row + col) * determinant(subMatrix);
+}
+
+function adjugate(matrix) {
+    const n = matrix.length;
+    const adj = [];
+
+    for (let i = 0; i < n; i++) {
+        adj[i] = [];
+        for (let j = 0; j < n; j++) {
+            adj[i][j] = cofactor(matrix, j, i); // Note: i and j are swapped for transpose
+        }
+    }
+
+    return adj;
 }
