@@ -23,6 +23,7 @@
         <button onclick="transposeMatrix()">Transpose Matrix</button>
         <button onclick="invertMatrix()">Invert Matrix</button>
         <button onclick="calculateDeterminant()">Determinant of Matrix</button>
+        <button onclick="calculateEigen()">Eigen of Matrix</button>
         
         <h3>Transposed Matrix:</h3>
         <div id="transposeResult"></div>
@@ -32,11 +33,14 @@
 
         <h3>Determinant of Matrix:</h3>
         <div id="determinantResult"></div>
+        <h3>Eigen of Matrix:</h3>
+        <div id="eigenResult"></div>
     </div>
     <script src="generateMat.js"></script>
     <script src="transposeMat.js"></script>
     <script src="invertMat.js"></script>
     <script src="darkmodetoggle.js"></script>
+    <script src="eigen.js"></script>
     <script>
         window.onload = generateMatrix;
     </script>
