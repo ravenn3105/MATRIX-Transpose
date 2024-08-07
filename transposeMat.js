@@ -12,7 +12,6 @@ function transposeMatrix()
 
     const matrix = [];
 
-    // Create the matrix from inputs
     for (let i = 0; i < numRows; i++) {
         matrix[i] = [];
         for (let j = 0; j < numCols; j++) {
@@ -21,7 +20,6 @@ function transposeMatrix()
         }
     }
 
-    // Transpose the matrix
     const transposedMatrix = [];
     for (let i = 0; i < numCols; i++) {
         transposedMatrix[i] = [];
@@ -30,7 +28,6 @@ function transposeMatrix()
         }
     }
 
-    // Display the transposed matrix
     let resultHTML = '<table>';
     for (let i = 0; i < numCols; i++) {
         resultHTML += '<tr>';

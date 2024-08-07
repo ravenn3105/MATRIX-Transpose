@@ -57,6 +57,7 @@ function invertMatrix() {
 
     document.getElementById('inverseResult').innerHTML = resultHTML;
 }
+
 function determinant(matrix) {
     const n = matrix.length;
     if (n === 1) return matrix[0][0];
@@ -68,6 +69,7 @@ function determinant(matrix) {
     }
     return det;
 }
+
 function cofactor(matrix, row, col) {
     const subMatrix = [];
     const n = matrix.length;
