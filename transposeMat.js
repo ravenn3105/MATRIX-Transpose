@@ -1,4 +1,5 @@
-function transposeMatrix() {
+function transposeMatrix() 
+{
     const isSquareMatrix = window.location.href.includes('square.html');
     let numRows, numCols;
     
@@ -40,5 +41,5 @@ function transposeMatrix() {
     }
     resultHTML += '</table>';
 
-    document.getElementById('result').innerHTML = resultHTML;
+    document.getElementById('transposeResult').innerHTML = resultHTML;
 }
