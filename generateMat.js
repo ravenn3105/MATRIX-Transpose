@@ -22,6 +22,15 @@ function generateMatrix() {
     }
     tableHTML += '</table>';
     matrixContainer.innerHTML = tableHTML;
+
+    // Add event listeners to all matrix cells
+    const cells = document.querySelectorAll('#matrix input');
+    cells.forEach(cell => {
+        cell.addEventListener('input', updateButtonText);
+    });
+
+    // Initial button text update
+    updateButtonText();
 }
 
 function validateAndPrepareMatrix() {
@@ -35,5 +44,19 @@ function validateAndPrepareMatrix() {
                 cell.value = '0';
             }
         }
+    }
+    
+    updateButtonText();
+}
+
+function isMatrixFilled() {
+    const cells = document.querySelectorAll('#matrix input');
+    return Array.from(cells).every(cell => cell.value !== '');
+}
+
+function updateButtonText() {
+    const button = document.getElementById('gen-m');
+    if (button) {
+        button.textContent = isMatrixFilled() ? 'Reset' : 'Generate';
     }
 }
