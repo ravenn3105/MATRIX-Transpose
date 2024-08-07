@@ -83,7 +83,7 @@ function calculateDeterminant() {
     }
 
     if (numRows !== numCols) {
-        document.getElementById('determinantResult').innerHTML = "Determinant is only defined for square matrices.";
+        document.getElementById('determinantResult').innerHTML = "Non-square Matrices doesn't have a Determinant.";
         return;
     }
 
