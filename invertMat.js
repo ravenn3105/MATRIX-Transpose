@@ -70,6 +70,41 @@ function determinant(matrix) {
     return det;
 }
 
+//Determinant Call Function
+function calculateDeterminant() {
+    const isSquareMatrix = document.getElementById('matrixSize') !== null;
+    let numRows, numCols;
+    
+    if (isSquareMatrix) {
+        numRows = numCols = parseInt(document.getElementById('matrixSize').value);
+    } else {
+        numRows = parseInt(document.getElementById('numRows').value);
+        numCols = parseInt(document.getElementById('numCols').value);
+    }
+
+    if (numRows !== numCols) {
+        document.getElementById('determinantResult').innerHTML = "Determinant is only defined for square matrices.";
+        return;
+    }
+
+    const matrix = [];
+
+    // Create the matrix from inputs
+    for (let i = 0; i < numRows; i++) {
+        matrix[i] = [];
+        for (let j = 0; j < numCols; j++) {
+            const cell = document.getElementById(`cell-${i}-${j}`);
+            matrix[i][j] = Number(cell.value);
+        }
+    }
+
+    // Calculate the determinant
+    const det = determinant(matrix);
+
+    // Display the result
+    document.getElementById('determinantResult').innerHTML = `The determinant is: ${det}`;
+}
+
 function cofactor(matrix, row, col) {
     const subMatrix = [];
     const n = matrix.length;
